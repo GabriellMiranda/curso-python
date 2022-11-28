@@ -1,0 +1,15 @@
+jupyterlab
+pandas
+numpy
+#sklearn
+#matplotlib
+#seaborn
+#xlrd
+# plotly
+# pylint
+# jupyterthemes
+# dash
+# jupyter-dash
+# plotly
+# openpyxl
+# ativar o ambiente: source ambiente-dados1/bin/activate
