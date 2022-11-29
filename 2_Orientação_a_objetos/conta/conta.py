@@ -38,3 +38,6 @@ class Account:
 
     def function():
         print("new function!!")
+    
+    def function2():
+        print("print in branch main")
