@@ -27,10 +27,12 @@ class Account:
     
     def get_holder(self):
         return self.__holder
-    
-    def get_limit(self):
+
+    @property # é usado como um get e pode ser acessado diretamente como ser fosse variável, mas é função ex: account.limit 
+    def limit(self):
         return self.__limit
 
-    def set_limit(self, new_value):
+    @limit.setter # usar como set ex: account.limit = 1000, mas tá usando a função não o atributo
+    def limit(self, new_value):
         self.__limit = new_value
 
