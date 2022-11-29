@@ -36,3 +36,5 @@ class Account:
     def limit(self, new_value):
         self.__limit = new_value
 
+    def function():
+        print("new function!!")
