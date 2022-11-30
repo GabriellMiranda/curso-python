@@ -5,15 +5,19 @@ class Account:
         self.__holder = holder
         self.__balance = balance
         self.__limit = limit
+        self.__code_bank = "001"
 
     def deposit(self, value):
         self.__balance += value
 
+    def __can_withdraw(self, value): #método que poder ser usado somente dentro da classe
+        return (self.__balance + self.__limit) >= value
+
     def withdraw(self, value):
-        if self.__balance >= value:
+        if (self.can_withdraw(value)):
             self.__balance -= value
         else:
-            print("balance insufficient!!")
+            print("limit insufficient!!")
 
     def extract(self):
         print("Your balance is:{}, the holder: {}".format(self.__balance, self.__holder))
@@ -36,8 +40,13 @@ class Account:
     def limit(self, new_value):
         self.__limit = new_value
 
-    def function():
-        print("new function!!")
-    
-    def function2():
-        print("print in branch main")
+    @staticmethod
+    def code_bank():
+        return "001"
+
+    @staticmethod # pode ser acessado sem criar um referencia de conta
+    def code_banks():
+        return {'BB':'001'}
+
+account = Account(1, "gabriel",50,1000)
+account.extract()
