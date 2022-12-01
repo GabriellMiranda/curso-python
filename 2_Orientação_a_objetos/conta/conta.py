@@ -46,7 +46,7 @@ class Account:
 
     @staticmethod # pode ser acessado sem criar um referencia de conta
     def code_banks():
-        return {'BB':'001'}
+        return {'BB':'001','Caixa':'104', 'Bradesco':'1'}
 
 account = Account(1, "gabriel",50,1000)
 account.extract()
