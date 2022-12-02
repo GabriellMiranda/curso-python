@@ -24,3 +24,4 @@ pytest -k cheese > vai rodar apenas os testes que tem o cheese.
 
 pytest -s => vai mostrar os prints mostrando se o teste entrou em determinada parte do fluxo do código
 
+oi
