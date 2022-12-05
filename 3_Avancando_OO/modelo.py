@@ -33,9 +33,14 @@ class Serie(Program):
 
     
 
-vingadores = Movie("Avengers", 2019, 160)
-print(vingadores.name)
+vingadores = Movie('vingadores - guerra infinita', 2018, 160)
+atlanta = Serie('atlanta', 2018, 2)
+vingadores.add_like()
+vingadores.add_like()
+vingadores.add_like()
 
-atlanta = Serie("Atlanta", 2018, 2)
-print(f'Name:{atlanta.name} - Year:{atlanta.year}'
-      f' - Seasons:{atlanta.seasons}')
+atlanta.add_like()
+atlanta.add_like()
+
+print(f'Nome: {vingadores.name} - Likes: {vingadores.like}')
+print(f'Nome: {atlanta.name} - Likes: {atlanta.like}')
