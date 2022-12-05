@@ -1,3 +1,4 @@
+from pytest import mark
 from codeForTest.game import kidding
 
 '''
@@ -36,5 +37,14 @@ def test_two_kidding_receive_two_so_return_two():
 def test_tree_kidding_receive_tree_so_return_tree_cheese():
     assert kidding(3) == 'cheese'
 
+@mark.goiabada
 def test_five_kidding_receive_five_so_return_five_goiabada():
     assert kidding(5) == 'goiabada'
+
+@mark.goiabada
+def test_ten_kidding_receive_ten_so_return_ten_goiabada():
+    assert kidding(10) == 'goiabada'
+
+@mark.skip(reason="Não foi implementado")
+def test_fiften_kidding_receive_ten_so_return_fiften_goiabada():
+    assert kidding(15) == 'goiabada'
