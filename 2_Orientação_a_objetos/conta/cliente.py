@@ -12,6 +12,7 @@ class Person:
     def name(self, name):
         self.__name = name
 
+    
 person = Person("gabriel", 21)
 
 print(person.name)

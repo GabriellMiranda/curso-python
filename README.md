@@ -31,9 +31,9 @@ Se você usar o marcador do pytest você consegue executar somente teste com aqu
 Bom para criar um grupo de testes.
 from pytest import mark
 
-@mark.goiabada
-def test_five_kidding_receive_five_so_return_five_goiabada():
-    assert kidding(5) == 'goiabada'
+    @mark.goiabada
+    def test_five_kidding_receive_five_so_return_five_goiabada():
+        assert kidding(5) == 'goiabada'
 
     execução:
     pytest -m goiabada
@@ -43,6 +43,8 @@ def test_five_kidding_receive_five_so_return_five_goiabada():
 
 @mark.skip => Para pular testes
 
-@mark.skip(reason="Não foi implementado")
-def test_fiften_kidding_receive_ten_so_return_fiften_goiabada():
-    assert kidding(15) == 'goiabada'
+    @mark.skip(reason="Não foi implementado")
+    def test_fiften_kidding_receive_ten_so_return_fiften_goiabada():
+        assert kidding(15) == 'goiabada'
+
+    
