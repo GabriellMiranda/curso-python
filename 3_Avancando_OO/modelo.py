@@ -44,16 +44,19 @@ class Playlist:
         self.name = name
         self._programs = programs
 
-    @property
-    def listing(self):
-        return self._programs
+    #Transformando a playlist em uma lista sem herdar de list
+    def __getitem__(self, item):
+        return self._programs[item]
 
     @property
     def listing(self):
         return self._programs
 
     @property
-    def size(self):
+    def listing(self):
+        return self._programs
+
+    def __len__(self):
         return len(self._programs)
 
 
@@ -74,7 +77,7 @@ atlanta.add_like()
 
 movie_and_series = [vingadores, atlanta, demolidor, tmep]
 playlist_end_in_week = Playlist('fim de semana', movie_and_series)
-for program in playlist_end_in_week.listing:
+for program in playlist_end_in_week:
     print(program)
 
 
