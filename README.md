@@ -1,6 +1,66 @@
 # curso-python
 # Lógica de Programação com python
 
+# 1_comecando_linguagem
+    Conceitos básicos de lógica de programação na linguagem python
+    utilização de comandos como:
+    if, for, while.
+
+# 2_orientação_a_objetos
+    Criação de classes em python.
+    criação de métodos estáticos:
+
+        @staticmethod
+        def code_bank():
+            return "001"
+
+    Criação de métodos com o @property:
+
+        @property # executa por baixo dos panos esse método ao invés de chamar o atributo name
+        def name(self):
+            return self.__name.title()
+
+    Criação de métodos com o setter:
+
+        @name.setter # funciona para acessar direto
+        def name(self, name):
+            self.__name = name
+
+# 3_avançando_oo
+    Entendendo mais sobre herança e polimorfimo
+
+    Exemplo de herança em python:
+
+        class Movie(Program):
+        def __init__(self, name, year, duration):
+            super().__init__(name, year)
+            self.duration = duration
+
+        Movie herda funcionalidade e atributos da classe mãe Program
+    
+    Usando o médoto __str__:
+
+        def __str__(self):
+        return (f'Name: {self.name} - Year:{self.year} - Duration:{self.duration} - Likes: {self._like}')
+
+        Serve para printar a classe, sem precisar chamar algum método
+    
+    Usando o método __getitem__:
+
+            #Transformando a playlist em uma lista sem herdar de list
+    def __getitem__(self, item):
+        return self._programs[item]
+
+        Transforma um atributo da classe em um iterável, podem iterar sobre a classe.
+
+    Herança múltipla:
+
+        class Pleno(Alura, Caelum):
+    pass
+
+
+
+
 # Teste em python
 
 '''
