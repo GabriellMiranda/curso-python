@@ -107,4 +107,10 @@ from pytest import mark
     def test_fiften_kidding_receive_ten_so_return_fiften_goiabada():
         assert kidding(15) == 'goiabada'
 
+# ambiente-dados1
+   ## ambiente virtual para instalação de bibliotecas python.
+   ## Para criar o ambiente virtual em sua máquina basta digitar o comando:
+        criar_ambiente_virtualenv
     
+    Este comando está contido no arquivo Makefile, lá você encontra outra possibilidades
+    de comandos para estar atualizado e adicionando as libs dn seu ambiente virtulal.
