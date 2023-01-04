@@ -59,7 +59,18 @@
     pass
 
 
+# 4_Python_trabalhando_IO
 
+    Manipulação de arquivos com python
+
+# 5_validacao_de_dados
+
+    Criação de uma factory para a validação de dados
+
+        Validação de CPF e CNPJ usando o: from validate_docbr import CPF, CNPJ
+
+        Factory - irá instaciar duas classes e verificar qual classe deve ser criada
+        isto dado os atributos passados.
 
 # Teste em python
 
