@@ -72,6 +72,14 @@
         Factory - irá instaciar duas classes e verificar qual classe deve ser criada
         isto dado os atributos passados.
 
+# 6_descobrindo_pep8
+
+    Padrões de projetos:
+
+        Utilização do pep8
+        Criaçaõ de classes abstratas:
+            Polimorfimo:Sobreposição de métodos
+
 # Teste em python
 
 '''

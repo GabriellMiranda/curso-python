@@ -1,14 +1,11 @@
 from fila_base import FilaBase
 
+from constants import CODIGO_PRIORITARIO
+
 class FilaPrioritaria(FilaBase):
 
     def gera_senha_atual(self) -> None:
-        self.senha_atual = f"NM{self.codigo}"
-  
-    def atualiza_fila(self) -> None:
-        self.reseta_fila()
-        self.gera_senha_atual()
-        self.fila.append(self.senha_atual)
+        self.senha_atual = f"${CODIGO_PRIORITARIO}{self.codigo}"
     
     def chama_cliente(self, caixa:int) -> str:
         cliente_atual: str = self.fila.pop(0)
@@ -23,8 +20,8 @@ class FilaPrioritaria(FilaBase):
             estatistica['dia'] = dia
             estatistica['agencia'] = agencia
             estatistica['cliente_atendidos'] = self.clientes_atendidos
-            estatistica['quantidade_clientes_atendidos'] = len(
-                self.clientes_atendidos)
+            estatistica['quantidade_clientes_atendidos'] = (
+                len(self.clientes_atendidos))
 
         return estatistica
 
