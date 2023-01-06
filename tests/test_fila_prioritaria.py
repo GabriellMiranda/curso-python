@@ -3,7 +3,7 @@ from _6_descobrindo_pep8_type_hits.fila_prioritaria import FilaPrioritaria
 
 
 
-def test_gera_senha_atual():
+def test_gera_senha_atual_primeira_senha_NM1():
     fila_prioritaria = FilaPrioritaria()
     fila_prioritaria.atualiza_fila()
 
