@@ -1,18 +1,7 @@
-class FilaPrioritaria:
-    codigo: int = 0
-    fila: list = []
-    clientes_atendidos: list = []
-    senha_atual: str = ""
+from fila_base import FilaBase
 
-    def gera_senha_atual(self) -> None:
-        self.senha_atual = f"NM{self.codigo}"
-
-    def reseta_fila(self) -> None:
-        if self.codigo >= 100:
-            self.codigo = 0
-        else:
-            self.codigo+=1
-
+class FilaPrioritaria(FilaBase):
+  
     def atualiza_fila(self) -> None:
         self.reseta_fila()
         self.gera_senha_atual()
