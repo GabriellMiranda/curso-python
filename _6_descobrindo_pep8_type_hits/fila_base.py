@@ -14,7 +14,7 @@ class FilaBase(metaclass=abc.ABCMeta):
         else:
             self.codigo += 1
 
-    def insere_cliente(self):
+    def insere_cliente(self) -> None:
         self.fila.append(self.senha_atual)
       
     def atualiza_fila(self) -> None:
@@ -29,3 +29,4 @@ class FilaBase(metaclass=abc.ABCMeta):
     @abc.abstractclassmethod
     def chama_cliente(self, caixa: int):
         ...
+
