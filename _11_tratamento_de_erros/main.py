@@ -1,7 +1,7 @@
 from exceptions import SaldoInsuficienteError, OperacaoFinanceiraError
 
 class Cliente:
-    def __init__(self, nome, cpf, profissao):
+    def __init__(self, nome: str, cpf: str, profissao: str) -> None:
         self.nome = nome
         self.cpf = cpf
         self.profissao = profissao
@@ -11,7 +11,7 @@ class ContaCorrente:
     total_contas_criadas = 0
     taxa_operacao = None
 
-    def __init__(self, cliente, agencia, numero):
+    def __init__(self, cliente: Cliente, agencia: int, numero: int) -> None:
         self.__saldo = 100
         self.__agencia =0
         self.__numero = 0
@@ -26,10 +26,10 @@ class ContaCorrente:
         ContaCorrente.taxa_operacao = 30/ContaCorrente.total_contas_criadas
 
     @property
-    def agencia(self):
+    def agencia(self) -> int:
         return self.__agencia
 
-    def __set_agencia(self, value):
+    def __set_agencia(self, value: float) -> None:
         if not isinstance(value, int):
             raise ValueError("O atributo agencia deve ser um inteiro", value)
         if value <= 0:
@@ -39,10 +39,10 @@ class ContaCorrente:
 
 
     @property
-    def numero(self):
+    def numero(self) -> int:
         return self.__numero
 
-    def __set_numero(self, value):
+    def __set_numero(self, value: int) -> None:
         if not isinstance(value, int):
             raise ValueError("O atributo número deve ser um inteiro")
         if value <= 0:
@@ -51,15 +51,15 @@ class ContaCorrente:
 
 
     @property
-    def saldo(self):
+    def saldo(self) -> float:
         return self.__saldo
 
     @saldo.setter
-    def saldo(self, value):
-        if not isinstance(value, int):
+    def saldo(self, value: float) -> None:
+        if not isinstance(value, float):
             raise ValueError("O atributo saldo deve ser um inteiro")
 
-    def transferir(self, valor, favorecido):
+    def transferir(self, valor: float, favorecido: Cliente) -> None:
         if valor > 0:
             raise ValueError("O valor a ser sacado não pode ser menor que zero")
         try:
@@ -70,7 +70,7 @@ class ContaCorrente:
             raise OperacaoFinanceiraError("Operação não finalizada") from E
         favorecido.depositar(valor)
     
-    def sacar(self, valor):
+    def sacar(self, valor: float) -> None:
         if valor > 0:
             raise ValueError("O valor a ser sacado não pode ser menor que zero")
         if self.saldo < valor:
@@ -78,10 +78,10 @@ class ContaCorrente:
             raise SaldoInsuficienteError(saldo=self.saldo, valor=valor)
         self.saldo -= valor
 
-    def depositar(self, valor):
+    def depositar(self, valor: float) -> None:
         self.saldo += valor
 
-    def __str__(self) -> dict:
+    def __str__(self) -> str:
         return f'saldo:{self.saldo}, agencia: {self.agencia}, numero: {self.numero}'
 
 
