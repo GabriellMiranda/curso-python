@@ -1,13 +1,13 @@
 import random 
 
 #printa mensagem de abertura
-def print_message_opening():
+def print_message_opening() -> None:
     print(40*"*")
     print("Welcome to hangman game")
     print(40*"*")
 
 #carrega palavra vazia
-def carries_word_secret():
+def carries_word_secret() -> str:
     file = open("entrada.txt","r")
     word = []
     for line in file:
@@ -21,22 +21,22 @@ def carries_word_secret():
     return word_secret.upper()
 
 
-def init_letter_hit(word_secret):
+def init_letter_hit(word_secret: str) -> str:
     return ["_" for letter in word_secret] 
  
-def ask_kick_letter():
+def ask_kick_letter() -> str:
     kick = input("which letter?")
     kick = kick.strip() # tira todos os espaços da string 
     return kick.upper()
 
-def brand_kick_right(kick, right_letters, word_secret, ):
+def brand_kick_right(kick: str, right_letters: str, word_secret: str) -> None:
     index = 0
     for letter in word_secret:
         if(letter == kick): #upper deixa todas as letra maiusculas
             right_letters[index] = letter
         index+=1
 
-def draw_hanged(mistakes):
+def draw_hanged(mistakes: int) -> None:
     print("  _______     ")
     print(" |/      |    ")
 
@@ -86,7 +86,7 @@ def draw_hanged(mistakes):
     print("_|___         ")
     print()
 
-def print_message_loser(word_secret):
+def print_message_loser(word_secret: str) -> None:
     print("Puxa, você foi enforcado!")
     print("A palavra era {}".format(word_secret))
     print("    _______________         ")
@@ -106,7 +106,7 @@ def print_message_loser(word_secret):
     print("     \_         _/         ")
     print("       \_______/           ")
 
-def print_messange_winner():
+def print_messange_winner() -> None:
     print("Parabéns, você ganhou!")
     print("       ___________      ")
     print("      '._==_==_=_.'     ")
@@ -121,7 +121,7 @@ def print_messange_winner():
 
 
 
-def game_hanged():
+def game_hanged() -> None:
 
     print_message_opening()
     word_secret = carries_word_secret()

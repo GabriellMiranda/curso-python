@@ -1,6 +1,6 @@
 import random as rd
 
-def joga_adivinhacao():
+def joga_adivinhacao() -> None:
     print(40*"*")
     print("Bem vindo ao jogo de adivinhação")
     print(40*"*")
@@ -46,5 +46,5 @@ def joga_adivinhacao():
         if (total_tentativas == 0):
             print("Você encerrou o total de tentativas!")
 
-if(__name__ == "__main__"):
+if __name__ == "__main__":
     joga_adivinhacao()

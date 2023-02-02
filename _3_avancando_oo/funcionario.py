@@ -1,12 +1,12 @@
 class Funcionario:
-    def registra_horas(self, horas):
+    def registra_horas(self, horas: int) -> None:
         print('Horas registradas.')
 
-    def mostrar_tarefas(self):
+    def mostrar_tarefas(self) -> None:
         print('Fez muita coisa...')
 
 class Caelum(Funcionario):
-    def mostrar_tarefas(self):
+    def mostrar_tarefas(self) -> None:
         print('Fez muita coisa, Caelumer')
 
     def busca_cursos_do_mes(self, mes=None):

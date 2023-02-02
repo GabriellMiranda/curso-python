@@ -1,7 +1,7 @@
 import forca
 import adivinhacao
 
-def escolhe_jogo():
+def escolhe_jogo() -> None:
     print(40*"*")
     print("Escolha seu jogo!")
     print(40*"*")
