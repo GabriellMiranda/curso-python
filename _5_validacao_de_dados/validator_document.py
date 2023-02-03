@@ -13,20 +13,20 @@ class Document:
             raise ValueError("error")
 
 class Cpf:
-    def __init__(self,document:str) -> None:
+    def __init__(self, document: str) -> None:
         if self.cpf_validate(document):
             self.cpf = document
         else:
             raise ValueError("CPF inválido!!")
 
     @staticmethod
-    def cpf_validate(document:str):
+    def cpf_validate(document: str) -> str:
             return CPF().validate(document)
     
     def __str__(self) -> str:
         return CPF().mask(self.cpf)
 
-    def format_cpf(self):
+    def format_cpf(self) -> str:
         fatia_um = self.cpf[:3]
         fatia_dois = self.cpf[3:6]
         fatia_tres = self.cpf[6:9]
@@ -35,7 +35,7 @@ class Cpf:
 
 
 class Cnpj:
-    def __init__(self, document:str) -> None:
+    def __init__(self, document: str) -> None:
         if self.cnpj_validate(document):
             self.document = document
             self.cnpj = CNPJ()
